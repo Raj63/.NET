@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DataContract.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataContract.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:56291/SampleWebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="BondObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondEffectiveFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BondLimit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondTerm" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Bondlist" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BondObject" nillable="true" type="tns:BondObject" />
+  <xs:complexType name="ArrayOfBondObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BondObject" nillable="true" type="tns:BondObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBondObject" nillable="true" type="tns:ArrayOfBondObject" />
+</xs:schema>
